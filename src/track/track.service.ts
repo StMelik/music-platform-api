@@ -24,16 +24,17 @@ export class TrackService {
         return track
     }
 
-    async getAll(count = 10, offset = 0): Promise<Track[]> {
+    async getAll(count = 10, offset = 0): Promise<{ total: number, tracks: Track[] }> {
+        const total = await this.trackModel.find().count()
         const tracks = await this.trackModel.find().skip(offset).limit(count);
-        return tracks;
+        return { total, tracks };
     }
 
-    async search(query: string): Promise<Track[]> {
+    async search(query: string): Promise<{ tracks: Track[] }> {
         const tracks = await this.trackModel.find({
             name: { $regex: new RegExp(query, 'i') }
         });
-        return tracks;
+        return { tracks };
     }
 
     async getOne(id: ObjectId): Promise<Track> {
