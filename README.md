@@ -21,9 +21,9 @@
 * MongoDB
 
 ## Адреса
-Сервер - [*](*)
+Сервер - [https://Music.stmelik.repl.co/](https://Music.stmelik.repl.co/)
 
-Проект - [*](*)
+Проект - [https://music-platform-frontend-six.vercel.app/](https://music-platform-frontend-six.vercel.app/)
 
 ## Установка и запуск сервера
 1. Клонировать репозиторий:  
